@@ -1,28 +1,20 @@
-var React = require('react')
 var ReactDOM = require('react-dom')
+
+var App = require('./components/app')
+
 var state = {name: 'Weka'}
 
-function changeName(ev) {
-  state.name = "kakapo"
+function changeName (ev) {
+  state.name = 'kakapo'
   render()
 }
-function App (props) {
-  var name = props.name
-  return (
-    <div>
-      <div>HELLO {name}</div>
-      <button onClick={changeName}>Change Name</button>
-    </div>
-
-  )
-}
+state.changeName = changeName
 
 var target = document.getElementById('main')
 
-function render() {
+function render () {
   var view = App(state)
   ReactDOM.render(view, target)
 }
 
 render()
-
